@@ -85,6 +85,7 @@ velero backup-location get
 # Namespace backup
 velero backup create mybackup --include-namespaces default
 # Full cluster backup
+# use flag --default-volumes-to-fs-backup for pvc data backup
 velero backup create full-cluster-backup --include-namespaces '*' --wait
 # Check status
 velero backup get
