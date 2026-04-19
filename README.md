@@ -71,9 +71,9 @@ velero install \
   --plugins velero/velero-plugin-for-aws:v1.9.0 \
   --bucket velero-backups \
   --secret-file ./credentials-velero \
-  --backup-location-config region=minio,s3ForcePathStyle="true",s3Url=http://100.64.188.228:31712 \
+  --backup-location-config region=minio,s3ForcePathStyle="true",s3Url=http://10.0.1.18:32109 \
   --use-node-agent \
-  --uploader-type restic \
+  --uploader-type kopia \
   --snapshot-location-config region=minio \
   --namespace velero
 
