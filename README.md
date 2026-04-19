@@ -53,7 +53,7 @@ kubectl get svc my-minio -n minio
 # Use the NodePort displayed as s3Url=http://<NodeIP>:<NodePort> in Velero install
 
 ### Step 2: Install Velero CLI
-curl -fsSL https://github.com/vmware-tanzu/velero/releases/latest/download/velero-linux-amd64.tar.gz -o velero.tar.gz
+curl -fsSL https://github.com/vmware-tanzu/velero/releases/download/v1.18.0/velero-v1.18.0-linux-amd64.tar.gz -o velero.tar.gz
 tar -xzf velero.tar.gz
 sudo mv velero-v*/velero /usr/local/bin/
 velero version
