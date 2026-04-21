@@ -116,3 +116,18 @@ velero schedule create daily-backup \
   --schedule "0 2 * * *" \
   --include-namespaces default
 velero schedule get
+
+velero install \
+  --provider aws \
+  --plugins velero/velero-plugin-for-aws:v1.9.0 \
+  --bucket velero \
+  --secret-file ./credentials-velero \
+  --backup-location-config region=minio,s3ForcePathStyle="true",s3Url=http://10.0.1.5:32493 \
+  --use-node-agent \
+  --uploader-type kopia \
+  --use-volume-snapshots=true \
+  --features=EnableCSI \
+  --node-agent-pod-cpu-request 1 \
+  --node-agent-pod-cpu-limit 3 \
+  --node-agent-pod-mem-request 1Gi \
+  --node-agent-pod-mem-limit 4Gi
